@@ -1,0 +1,9 @@
+﻿@page "/services/{ImageId}/view"
+
+<MudText Typo="Typo.h2">Service @ImageId</MudText>
+
+
+@code {
+    [Parameter]
+    public string ImageId { get; set; }
+}
