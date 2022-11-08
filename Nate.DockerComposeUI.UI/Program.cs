@@ -1,7 +1,6 @@
 using System.Globalization;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using Nate.DockerComposeUI.UI.Data;
 using Serilog;
 using MudBlazor.Services;
 
@@ -26,7 +25,6 @@ builder.WebHost.UseStaticWebAssets();
 // configure services
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddMudServices();
 
 
