@@ -1,0 +1,39 @@
+﻿<MonacoEditor Id="@_editorGuid" CssClass="monaco-editor" ConstructionOptions="MonacoConstruction" />
+
+
+<style>
+    .monaco-editor{
+        height: @Height;
+    }
+</style>
+
+@code {
+
+    [Parameter]
+    public string Height { get; set; } = "400px";
+    
+    [Parameter]
+    public string Text { get; set; } = "";
+
+    [Parameter]
+    public string Language { get; set; } = "yaml";
+    
+    
+    private string _editorGuid = Guid.NewGuid().ToString();
+    
+    
+    private StandaloneEditorConstructionOptions MonacoConstruction(BlazorMonaco.MonacoEditor arg)
+    {
+        return new StandaloneEditorConstructionOptions
+        {
+            AutomaticLayout = true,
+            
+            Language = "yaml",
+            Value = Text,
+            Theme = "vs-dark",
+            ReadOnly = true,
+            FormatOnType = true
+        };
+    }
+
+}

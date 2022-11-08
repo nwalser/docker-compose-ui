@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Breeze.ImageDescriptio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Breeze.ImageDeployments", "Nate.Breeze.ImageDeployments\Nate.Breeze.ImageDeployments.csproj", "{14DFF05A-BE30-41CB-9836-8807CA3807DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Blazor.Markdown", "Nate.Blazor.Markdown\Nate.Blazor.Markdown.csproj", "{D300D98F-7595-413C-B92A-3E5AE55FA03C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{14DFF05A-BE30-41CB-9836-8807CA3807DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14DFF05A-BE30-41CB-9836-8807CA3807DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14DFF05A-BE30-41CB-9836-8807CA3807DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D300D98F-7595-413C-B92A-3E5AE55FA03C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D300D98F-7595-413C-B92A-3E5AE55FA03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D300D98F-7595-413C-B92A-3E5AE55FA03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D300D98F-7595-413C-B92A-3E5AE55FA03C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
