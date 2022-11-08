@@ -1,0 +1,38 @@
+﻿@using BlazorMonaco
+@using Nate.Breeze.ImageDeployments.Model
+
+<MudPaper>
+    <MudText>@Deployment.Name</MudText>
+    <MudText>@Deployment.Description</MudText>
+    
+    <MonacoEditor Id="@_editorGuid" CssClass="monaco-editor" ConstructionOptions="EditorConstructionOptions" />
+</MudPaper>
+
+<style>
+    .monaco-editor{
+        height: 400px;
+    }
+</style>
+
+
+@code {
+
+    [Parameter]
+    public Deployment Deployment { get; set; } = null!;
+
+    private string _editorGuid = Guid.NewGuid().ToString();
+    
+    private StandaloneEditorConstructionOptions EditorConstructionOptions(MonacoEditor editor)
+    {
+        return new StandaloneEditorConstructionOptions
+        {
+            AutomaticLayout = true,
+            
+            Language = "yaml",
+            Value = Deployment.DockerComposeYml,
+            Theme = "vs-dark",
+            ReadOnly = true,
+            FormatOnType = true
+        };
+    }    
+}

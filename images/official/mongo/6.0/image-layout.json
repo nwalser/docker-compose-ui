@@ -1,0 +1,47 @@
+{
+    "Organisation": "official",
+    "Namespace": "mongo",
+    "Tag": "6.0",
+    "Ports": [
+        {
+            "Number": 27000,
+            "Name": "Data Transfer",
+            "Description": "This Port is used to connect to from clients"
+        },
+        {
+            "Number": 12000,
+            "Name": "Management",
+            "Description": "This Port is used to connect to from clients"
+        }
+    ],
+    "EnvironmentVariables": [
+        {
+            "Name": "MONGO_INITIAL_USER",
+            "Description": "Initial username"
+        },
+        {
+            "Name": "MONGO_INITIAL_USER_PASS",
+            "Description": "Initial password"
+        }
+    ],
+    "ConfigurationFiles": [
+        {
+            "Name": "Mongo Configuration",
+            "Path": "/mongo/config",
+            "Description": ""
+        }
+    ],
+    "Secrets": [
+        {
+            "Name": "Secret 1",
+            "Description": "Some Description"
+        }
+    ],
+    "Volumes": [
+        {
+            "Name": "Data",
+            "Path": "/mongo/data",
+            "Description": "Volume for storing all user data"
+        }
+    ]
+}

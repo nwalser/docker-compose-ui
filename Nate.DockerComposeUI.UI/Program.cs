@@ -3,6 +3,8 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Serilog;
 using MudBlazor.Services;
+using Nate.DockerComposeUI.Deployment.Repository;
+using Nate.DockerComposeUI.Image.Repository;
 
 CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
 CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
@@ -16,7 +18,11 @@ Log.Logger = new LoggerConfiguration()
 // configure host
 builder.Host.UseSerilog();
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-builder.Host.ConfigureContainer<ContainerBuilder>(b => { });
+builder.Host.ConfigureContainer<ContainerBuilder>(b =>
+{
+    b.RegisterType<ImageRepository>().As<IImageRepository>();
+    b.RegisterType<DeploymentRepository>().As<IDeploymentRepository>();
+});
 
 // configure webhost
 builder.WebHost.UseSentry();
