@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Breeze.ImageDeployment
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Blazor.Markdown", "Nate.Blazor.Markdown\Nate.Blazor.Markdown.csproj", "{D300D98F-7595-413C-B92A-3E5AE55FA03C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Blazor.MonacoEditor", "Nate.Blazor.MonacoEditor\Nate.Blazor.MonacoEditor.csproj", "{D7CE1BCE-A038-4C48-916A-6A40EF55C381}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,10 @@ Global
 		{D300D98F-7595-413C-B92A-3E5AE55FA03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D300D98F-7595-413C-B92A-3E5AE55FA03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D300D98F-7595-413C-B92A-3E5AE55FA03C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7CE1BCE-A038-4C48-916A-6A40EF55C381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7CE1BCE-A038-4C48-916A-6A40EF55C381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7CE1BCE-A038-4C48-916A-6A40EF55C381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7CE1BCE-A038-4C48-916A-6A40EF55C381}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection

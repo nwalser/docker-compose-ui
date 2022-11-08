@@ -1,11 +1,29 @@
-﻿<MudPaper>
-    <h3>Environment Variables</h3>
-    
-    @foreach (var environmentVariable in EnvironmentVariables)
-    {
-        <MudText>@environmentVariable.Name - @environmentVariable.Description</MudText>
-    }
-</MudPaper>
+﻿<MudCard>
+    <MudCardHeader Class="pa-3">
+        <CardHeaderContent>
+            <h2>Environment Variables</h2>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent Class="pa-0">
+        <MudSimpleTable Style="overflow-x: auto;" Dense="true">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var environmentVariable in EnvironmentVariables)
+                {
+                    <tr>
+                        <td>@environmentVariable.Name</td>
+                        <td>@environmentVariable.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </MudSimpleTable>
+    </MudCardContent>
+</MudCard>
 
 
 @code {

@@ -1,15 +1,20 @@
-﻿@using Nate.Breeze.ImageDeployments.Repository
-
-<MudPaper>
-    <MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-0">
-        @foreach (var deployment in Deployments)
-        {
-            <MudTabPanel Text="@deployment.Name">
-                <NateMonacoEditor Height="600px" Text="@deployment.DockerComposeYml" Language="yaml" />
-            </MudTabPanel>
-        }
-    </MudTabs>
-</MudPaper>
+﻿<MudCard>
+    <MudCardHeader Class="pa-3">
+        <CardHeaderContent>
+            <h2>Sample Deployments</h2>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent Class="pa-0 ma-0">
+        <MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-0">
+            @foreach (var deployment in Deployments)
+            {
+                <MudTabPanel Text="@deployment.Name">
+                    <NateMonacoEditor Height="600px" Text="@deployment.DockerComposeYml" Language="yaml" />
+                </MudTabPanel>
+            }
+        </MudTabs>
+    </MudCardContent>
+</MudCard>
 
 
 @code {

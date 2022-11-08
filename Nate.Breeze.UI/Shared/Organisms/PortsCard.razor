@@ -1,11 +1,33 @@
-﻿<MudPaper>
-    <h3>Ports</h3>
-    
-    @foreach (var port in Ports)
-    {
-        <MudText>@port.Number : @port.Name - @port.Description</MudText>
-    }
-</MudPaper>
+﻿<MudCard>
+    <MudCardHeader Class="pa-3">
+        <CardHeaderContent>
+            <h2>Ports</h2>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent Class="pa-0">
+        <MudSimpleTable Style="overflow-x: auto;" Dense="true">
+            <thead>
+            <tr>
+                <th>Port</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var port in Ports)
+            {
+                <tr>
+                    <td>
+                        <MudChip>@port.Number: @port.Name</MudChip>
+                    </td>
+                    <td>@port.Name</td>
+                    <td>@port.Description</td>
+                </tr>
+            }
+            </tbody>
+        </MudSimpleTable>
+    </MudCardContent>
+</MudCard>
 
 
 @code {

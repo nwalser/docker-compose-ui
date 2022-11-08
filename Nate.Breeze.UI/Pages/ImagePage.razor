@@ -1,10 +1,16 @@
 ﻿@page "/images/{ImageOrganisation}/{ImageNamespace}/{ImageTag}/"
 
-<MudText Typo="Typo.h4">@ImageOrganisation / @ImageNamespace : @ImageTag</MudText>
 
 <MudGrid>
     <MudItem xs="9">
-        <DeploymentsCard ImageOrganisation="@ImageOrganisation" ImageNamespace="@ImageNamespace" ImageTag="@ImageTag" />
+        <MudGrid>
+            <MudItem xs="12">
+                <ImageDescriptionCard ImageOrganisation="@ImageOrganisation" ImageNamespace="@ImageNamespace" ImageTag="@ImageTag"/>
+            </MudItem>
+            <MudItem xs="12">
+                <DeploymentsCard ImageOrganisation="@ImageOrganisation" ImageNamespace="@ImageNamespace" ImageTag="@ImageTag"/>
+            </MudItem>
+        </MudGrid>
     </MudItem>
 
     <MudItem xs="3">

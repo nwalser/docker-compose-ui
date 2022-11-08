@@ -1,5 +1,8 @@
-﻿<h3>MarkdownViewer</h3>
+﻿@Ms
 
 @code {
-    
+    [Parameter]
+    public string Text { get; set; } = string.Empty;
+
+    private MarkupString  Ms => (MarkupString) (Markdig.Markdown.ToHtml(Text));
 }

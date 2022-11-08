@@ -33,6 +33,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Nate.Blazor.Markdown\Nate.Blazor.Markdown.csproj" />
+      <ProjectReference Include="..\Nate.Blazor.MonacoEditor\Nate.Blazor.MonacoEditor.csproj" />
       <ProjectReference Include="..\Nate.Breeze.ImageConfigurationFiles\Nate.Breeze.ImageConfigurationFiles.csproj" />
       <ProjectReference Include="..\Nate.Breeze.ImageDeployments\Nate.Breeze.ImageDeployments.csproj" />
       <ProjectReference Include="..\Nate.Breeze.ImageDescription\Nate.Breeze.ImageDescription.csproj" />

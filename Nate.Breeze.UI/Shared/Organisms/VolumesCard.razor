@@ -1,11 +1,29 @@
-﻿<MudPaper>
-    <h3>Volumes</h3>
-    
-    @foreach (var volume in Volumes)
-    {
-        <MudText>@volume.Name - @volume.Description</MudText>
-    }
-</MudPaper>
+﻿<MudCard>
+    <MudCardHeader Class="pa-3">
+        <CardHeaderContent>
+            <h2>Volumes</h2>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent Class="pa-0">
+        <MudSimpleTable Style="overflow-x: auto;" Dense="true">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var secret in Volumes)
+                {
+                    <tr>
+                        <td>@secret.Name</td>
+                        <td>@secret.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </MudSimpleTable>
+    </MudCardContent>
+</MudCard>
 
 
 @code {

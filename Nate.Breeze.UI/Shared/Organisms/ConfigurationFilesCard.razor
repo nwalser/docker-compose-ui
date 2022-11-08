@@ -1,12 +1,31 @@
-﻿<MudPaper>
-    <h3>ConfigurationFilesCard</h3>
-    
-    @foreach (var configurationFile in ConfigurationFiles)
-    {
-        <MudText>@configurationFile.Path : @configurationFile.Name - @configurationFile.Description</MudText>
-    }
-</MudPaper>
-
+﻿<MudCard>
+    <MudCardHeader Class="pa-3">
+        <CardHeaderContent>
+            <h2>Configuration Files</h2>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent Class="pa-0">
+        <MudSimpleTable Style="overflow-x: auto;" Dense="true">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Path</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var configurationFile in ConfigurationFiles)
+                {
+                    <tr>
+                        <td>@configurationFile.Name</td>
+                        <td>@configurationFile.Path</td>
+                        <td>@configurationFile.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </MudSimpleTable>
+    </MudCardContent>
+</MudCard>
 
 @code {
     [Inject]

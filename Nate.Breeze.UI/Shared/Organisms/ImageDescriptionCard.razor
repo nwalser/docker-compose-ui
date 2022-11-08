@@ -1,12 +1,46 @@
-﻿<h3>ImageDescription</h3>
+﻿@using Nate.Breeze.ImageDescription.Repository
 
-@* <Markdown FilePath="wwwroot/markdown-file.md"></Markdown> *@
-
+<MudCard>
+    <MudCardHeader Class="pa-3">
+        <CardHeaderContent>
+            @if (ImageOrganisation == "official")
+            {
+                <h1>@($"{ImageNamespace}:{ImageTag}")</h1>
+                <MudChip Color="Color.Success">Official</MudChip>
+            }
+            else
+            {
+                <h1>@($"{ImageOrganisation}/{ImageNamespace}:{ImageTag}")</h1>
+            }
+            
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent Class="pa-3">
+        <MarkdownViewer Text="@Description.Markdown"/>
+    </MudCardContent>
+</MudCard>
 
 
 @code {
-
+    [Inject]
+    private DescriptionRepository Repository { get; set; } = null!;
+    
+    
     [Parameter]
-    public Description Description { get; set; } = null!;
+    public string ImageOrganisation { get; set; } = string.Empty;
+    
+    [Parameter]
+    public string ImageNamespace { get; set; } = string.Empty;
+    
+    [Parameter]
+    public string ImageTag { get; set; } = string.Empty;
 
+
+    private Description Description { get; set; } = new Description("");
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        Description = await Repository.Load(ImageOrganisation, ImageNamespace, ImageTag);
+    }
 }
