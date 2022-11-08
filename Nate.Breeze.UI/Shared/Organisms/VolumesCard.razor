@@ -1,0 +1,33 @@
+﻿<MudPaper>
+    <h3>Volumes</h3>
+    
+    @foreach (var volume in Volumes)
+    {
+        <MudText>@volume.Name - @volume.Description</MudText>
+    }
+</MudPaper>
+
+
+@code {
+    [Inject]
+    private VolumeRepository Repository { get; set; } = null!;
+    
+    
+    [Parameter]
+    public string ImageOrganisation { get; set; } = string.Empty;
+    
+    [Parameter]
+    public string ImageNamespace { get; set; } = string.Empty;
+    
+    [Parameter]
+    public string ImageTag { get; set; } = string.Empty;
+
+
+    private List<Volume> Volumes { get; set; } = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        Volumes = await Repository.Load(ImageOrganisation, ImageNamespace, ImageTag);
+    }
+}

@@ -1,0 +1,33 @@
+﻿<MudPaper>
+    <h3>ConfigurationFilesCard</h3>
+    
+    @foreach (var configurationFile in ConfigurationFiles)
+    {
+        <MudText>@configurationFile.Path : @configurationFile.Name - @configurationFile.Description</MudText>
+    }
+</MudPaper>
+
+
+@code {
+    [Inject]
+    private ConfigurationFilesRepository Repository { get; set; } = null!;
+    
+    
+    [Parameter]
+    public string ImageOrganisation { get; set; } = string.Empty;
+    
+    [Parameter]
+    public string ImageNamespace { get; set; } = string.Empty;
+    
+    [Parameter]
+    public string ImageTag { get; set; } = string.Empty;
+
+
+    private List<ConfigurationFile> ConfigurationFiles { get; set; } = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        ConfigurationFiles = await Repository.Load(ImageOrganisation, ImageNamespace, ImageTag);
+    }
+}

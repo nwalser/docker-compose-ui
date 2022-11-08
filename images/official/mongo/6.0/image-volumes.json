@@ -1,0 +1,7 @@
+[
+    {
+        "Name": "Data",
+        "Path": "/mongo/data",
+        "Description": "Volume for storing all user data"
+    }
+]

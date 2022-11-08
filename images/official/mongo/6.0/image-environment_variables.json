@@ -1,0 +1,10 @@
+[
+    {
+        "Name": "MONGO_INITIAL_USER",
+        "Description": "Initial username"
+    },
+    {
+        "Name": "MONGO_INITIAL_USER_PASS",
+        "Description": "Initial password"
+    }
+]

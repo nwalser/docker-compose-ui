@@ -1,0 +1,33 @@
+﻿<MudPaper>
+    <h3>Environment Variables</h3>
+    
+    @foreach (var environmentVariable in EnvironmentVariables)
+    {
+        <MudText>@environmentVariable.Name - @environmentVariable.Description</MudText>
+    }
+</MudPaper>
+
+
+@code {
+    [Inject]
+    private EnvironmentVariablesRepository Repository { get; set; } = null!;
+    
+    
+    [Parameter]
+    public string ImageOrganisation { get; set; } = string.Empty;
+    
+    [Parameter]
+    public string ImageNamespace { get; set; } = string.Empty;
+    
+    [Parameter]
+    public string ImageTag { get; set; } = string.Empty;
+
+
+    private List<EnvironmentVariable> EnvironmentVariables { get; set; } = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        EnvironmentVariables = await Repository.Load(ImageOrganisation, ImageNamespace, ImageTag);
+    }
+}

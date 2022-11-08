@@ -32,4 +32,15 @@
       <_ContentIncludedByDefault Remove="wwwroot\css\site.css" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Nate.Breeze.ImageConfigurationFiles\Nate.Breeze.ImageConfigurationFiles.csproj" />
+      <ProjectReference Include="..\Nate.Breeze.ImageDeployments\Nate.Breeze.ImageDeployments.csproj" />
+      <ProjectReference Include="..\Nate.Breeze.ImageDescription\Nate.Breeze.ImageDescription.csproj" />
+      <ProjectReference Include="..\Nate.Breeze.ImageEnvironmentVariables\Nate.Breeze.ImageEnvironmentVariables.csproj" />
+      <ProjectReference Include="..\Nate.Breeze.ImagePorts\Nate.Breeze.ImagePorts.csproj" />
+      <ProjectReference Include="..\Nate.Breeze.ImageSecrets\Nate.Breeze.ImageSecrets.csproj" />
+      <ProjectReference Include="..\Nate.Breeze.ImageVolumes\Nate.Breeze.ImageVolumes.csproj" />
+      <ProjectReference Include="..\Nate.Breeze.Image\Nate.Breeze.Image.csproj" />
+    </ItemGroup>
+
 </Project>

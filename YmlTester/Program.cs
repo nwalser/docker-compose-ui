@@ -1,9 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Nate.DockerComposeUI.Deployment.Model;
+using Nate.Breeze.ImageDeployments.Model;
 using Newtonsoft.Json;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
 
 
 var deployment = new Deployment()

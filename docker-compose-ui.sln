@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.DockerComposeUI.UI", "Nate.DockerComposeUI.UI\Nate.DockerComposeUI.UI.csproj", "{5E30C9C4-A8AD-47DD-A14B-110D29C75814}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Breeze.UI", "Nate.Breeze.UI\Nate.Breeze.UI.csproj", "{5E30C9C4-A8AD-47DD-A14B-110D29C75814}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmlTester", "YmlTester\YmlTester.csproj", "{1AAB3333-9EF7-488E-9820-5AD4D8E8EE91}"
 EndProject
@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Breeze.ImageConfigurat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Breeze.ImageEnvironmentVariables", "Nate.Breeze.ImageEnvironmentVariables\Nate.Breeze.ImageEnvironmentVariables.csproj", "{9F0AF592-2001-4774-AD16-A706EEF3D449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Breeze.Images", "Nate.Breeze.Images\Nate.Breeze.Images.csproj", "{A524CCAE-7E36-4548-A9C1-59C7FA99CCCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Breeze.Image", "Nate.Breeze.Image\Nate.Breeze.Image.csproj", "{A524CCAE-7E36-4548-A9C1-59C7FA99CCCF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nate.Breeze.ImageDescription", "Nate.Breeze.ImageDescription\Nate.Breeze.ImageDescription.csproj", "{2A8F45AC-24EC-4232-993B-DC0A91E41FAA}"
 EndProject

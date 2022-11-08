@@ -1,0 +1,12 @@
+[
+    {
+        "Number": 27000,
+        "Name": "Data Transfer",
+        "Description": "This Port is used to connect to from clients"
+    },
+    {
+        "Number": 12000,
+        "Name": "Management",
+        "Description": "This Port is used to connect to from clients"
+    }
+]

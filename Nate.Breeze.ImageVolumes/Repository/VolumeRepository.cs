@@ -1,4 +1,4 @@
-﻿using Nate.DockerComposeUI.Image.Model;
+﻿using Nate.Breeze.ImageVolumes.Model;
 using Newtonsoft.Json;
 
 namespace Nate.Breeze.ImageVolumes.Repository;

@@ -3,8 +3,14 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Serilog;
 using MudBlazor.Services;
-using Nate.DockerComposeUI.Deployment.Repository;
-using Nate.DockerComposeUI.Image.Repository;
+using Nate.Breeze.Image.Repository;
+using Nate.Breeze.ImageConfigurationFiles.Repository;
+using Nate.Breeze.ImageDeployments.Repository;
+using Nate.Breeze.ImageDescription.Repository;
+using Nate.Breeze.ImageEnvironmentVariables.Repository;
+using Nate.Breeze.ImagePorts.Repository;
+using Nate.Breeze.ImageSecrets.Repository;
+using Nate.Breeze.ImageVolumes.Repository;
 
 CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
 CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
@@ -20,8 +26,14 @@ builder.Host.UseSerilog();
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(b =>
 {
-    b.RegisterType<ImageRepository>().As<IImageRepository>();
-    b.RegisterType<DeploymentRepository>().As<IDeploymentRepository>();
+    b.RegisterType<ImagesRepository>();
+    b.RegisterType<ConfigurationFilesRepository>();
+    b.RegisterType<DeploymentRepository>();
+    b.RegisterType<DescriptionRepository>();
+    b.RegisterType<EnvironmentVariablesRepository>();
+    b.RegisterType<PortsRepository>();
+    b.RegisterType<SecretsRepository>();
+    b.RegisterType<VolumeRepository>();
 });
 
 // configure webhost

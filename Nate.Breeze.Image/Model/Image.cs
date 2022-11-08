@@ -1,4 +1,4 @@
-﻿namespace Nate.Breeze.Images.Model;
+﻿namespace Nate.Breeze.Image.Model;
 
 public class Image
 {
