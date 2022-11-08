@@ -1,21 +1,18 @@
 ﻿@using Nate.Breeze.ImageDescription.Repository
 
 <MudCard>
-    <MudCardHeader Class="pa-3">
-        <CardHeaderContent>
-            @if (ImageOrganisation == "official")
-            {
-                <h1>@($"{ImageNamespace}:{ImageTag}")</h1>
-                <MudChip Color="Color.Success">Official</MudChip>
-            }
-            else
-            {
-                <h1>@($"{ImageOrganisation}/{ImageNamespace}:{ImageTag}")</h1>
-            }
-            
-        </CardHeaderContent>
-    </MudCardHeader>
     <MudCardContent Class="pa-3">
+        @if (ImageOrganisation == "official")
+        {
+            <MudBadge Content="@("Official")" Color="Color.Success" Overlap="true">
+                <h1>@ImageNamespace:@ImageTag</h1>
+            </MudBadge>
+        }
+        else
+        {
+            <h1>@ImageOrganisation/@ImageNamespace:@ImageTag</h1>
+        }
+        
         <MarkdownViewer Text="@Description.Markdown"/>
     </MudCardContent>
 </MudCard>

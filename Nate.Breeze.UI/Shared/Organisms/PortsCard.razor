@@ -1,7 +1,7 @@
 ﻿<MudCard>
     <MudCardHeader Class="pa-3">
         <CardHeaderContent>
-            <h2>Ports</h2>
+            <h2>&#128268 Ports</h2>
         </CardHeaderContent>
     </MudCardHeader>
     <MudCardContent Class="pa-0">
@@ -17,9 +17,7 @@
             @foreach (var port in Ports)
             {
                 <tr>
-                    <td>
-                        <MudChip>@port.Number: @port.Name</MudChip>
-                    </td>
+                    <td>@port.Number</td>
                     <td>@port.Name</td>
                     <td>@port.Description</td>
                 </tr>
