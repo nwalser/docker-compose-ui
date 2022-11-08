@@ -1,0 +1,14 @@
+﻿<MudPaper>
+    <h3>Ports</h3>
+    
+    @foreach (var port in Ports)
+    {
+        <MudText>@port.Number : @port.Name - @port.Description</MudText>
+    }
+</MudPaper>
+
+
+@code {
+    [Parameter]
+    public List<Port> Ports { get; set; } = new();
+}

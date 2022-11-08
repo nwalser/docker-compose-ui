@@ -2,9 +2,9 @@
 
 namespace Nate.DockerComposeUI.Image.Repository;
 
-public class ImageRepository
+public class ImageRepository : IImageRepository
 {
-    public ImageLayout Load(string imageNamespace, string imageTag)
+    public Task<ImageLayout> Load(string imageNamespace, string imageTag)
     {
         throw new NotImplementedException();
     }

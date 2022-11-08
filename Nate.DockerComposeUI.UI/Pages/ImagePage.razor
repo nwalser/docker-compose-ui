@@ -1,0 +1,62 @@
+﻿@page "/services/{ImageNamespace}/{ImageTag}"
+
+@if (ImageLayout != null)
+{
+    <MudText Typo="Typo.h2">@ImageLayout.Namespace : @ImageLayout.Tag</MudText>
+    
+    <MudGrid>
+        <MudItem xs="9">
+            <MudGrid>
+
+            </MudGrid>
+        </MudItem>
+
+        <MudItem xs="3">
+            <MudGrid>
+                <MudItem xs="12">
+                    <PortsCard Ports="ImageLayout.Ports" />
+                </MudItem>
+                <MudItem xs="12">
+                    <EnvironmentVariablesCard EnvironmentVariables="ImageLayout.EnvironmentVariables"/>
+                </MudItem>
+                <MudItem xs="12">
+                    <ConfigurationFilesCard ConfigurationFiles="ImageLayout.ConfigurationFiles"/>
+                </MudItem>
+                <MudItem xs="12">
+                    <SecretsCard Secrets="ImageLayout.Secrets"/>
+                </MudItem>
+                <MudItem xs="12">
+                    <VolumesCard Volumes="ImageLayout.Volumes"/>
+                </MudItem>
+            </MudGrid>
+        </MudItem>
+    </MudGrid>
+}
+else
+{
+    <MudText>Loading...</MudText>
+}
+
+
+@code {
+    [Inject]
+    private IImageRepository Repository { get; set; } = null!;
+    
+    [Parameter]
+    public string? ImageNamespace { get; set; }
+    [Parameter]
+    public string? ImageTag { get; set; }
+    
+    private ImageLayout? ImageLayout { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        if (string.IsNullOrEmpty(ImageNamespace))
+            throw new ArgumentNullException(nameof(ImageNamespace));
+
+        if (string.IsNullOrEmpty(ImageTag))
+            throw new ArgumentNullException(nameof(ImageTag));
+        
+        ImageLayout = await Repository.Load(ImageNamespace, ImageTag);
+    }
+}

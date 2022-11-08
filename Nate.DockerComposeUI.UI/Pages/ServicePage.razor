@@ -1,6 +1,8 @@
-﻿@page "/services/{ImageId}/view"
+﻿@page "/services/{ImageNamespace}/{ImageTag}"
+@using Nate.DockerComposeUI.Image.Repository
+@using Nate.DockerComposeUI.Image.Model
 
-<MudText Typo="Typo.h2">Service @ImageId</MudText>
+<MudText Typo="Typo.h2">Servic</MudText>
 
 
 <MudGrid>
@@ -92,11 +94,25 @@
 
 
 
-
-
-
-
 @code {
+    [Inject]
+    private IImageRepository Repository { get; set; } = null!;
+    
     [Parameter]
-    public string ImageId { get; set; }
+    public string? ImageNamespace { get; set; }
+    [Parameter]
+    public string? ImageTag { get; set; }
+    
+    private ImageLayout? ImageLayout { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        if (string.IsNullOrEmpty(ImageNamespace))
+            throw new ArgumentNullException(nameof(ImageNamespace));
+
+        if (string.IsNullOrEmpty(ImageTag))
+            throw new ArgumentNullException(nameof(ImageTag));
+        
+        ImageLayout = await Repository.Load(ImageNamespace, ImageTag);
+    }
 }
